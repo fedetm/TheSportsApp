@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		7287BBAC27F4AA9D005CD356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBAB27F4AA9D005CD356 /* AppDelegate.swift */; };
 		7287BBAE27F4AA9E005CD356 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBAD27F4AA9D005CD356 /* SceneDelegate.swift */; };
-		7287BBB027F4AA9E005CD356 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBAF27F4AA9E005CD356 /* ViewController.swift */; };
 		7287BBB327F4AA9E005CD356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7287BBB127F4AA9E005CD356 /* Main.storyboard */; };
 		7287BBB527F4AAA1005CD356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7287BBB427F4AAA1005CD356 /* Assets.xcassets */; };
 		7287BBB827F4AAA1005CD356 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7287BBB627F4AAA1005CD356 /* LaunchScreen.storyboard */; };
+		7287BBC027F4C28F005CD356 /* LeagueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBBF27F4C28F005CD356 /* LeagueTableViewController.swift */; };
+		7287BBC227F4C6DA005CD356 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBC127F4C6DA005CD356 /* TeamTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7287BBA827F4AA9D005CD356 /* TheSportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7287BBAB27F4AA9D005CD356 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7287BBAD27F4AA9D005CD356 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7287BBAF27F4AA9E005CD356 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7287BBB227F4AA9E005CD356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7287BBB427F4AAA1005CD356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7287BBB727F4AAA1005CD356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7287BBB927F4AAA1005CD356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7287BBBF27F4C28F005CD356 /* LeagueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewController.swift; sourceTree = "<group>"; };
+		7287BBC127F4C6DA005CD356 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				7287BBAB27F4AA9D005CD356 /* AppDelegate.swift */,
 				7287BBAD27F4AA9D005CD356 /* SceneDelegate.swift */,
-				7287BBAF27F4AA9E005CD356 /* ViewController.swift */,
 				7287BBB127F4AA9E005CD356 /* Main.storyboard */,
+				7287BBC127F4C6DA005CD356 /* TeamTableViewController.swift */,
+				7287BBBF27F4C28F005CD356 /* LeagueTableViewController.swift */,
 				7287BBB427F4AAA1005CD356 /* Assets.xcassets */,
 				7287BBB627F4AAA1005CD356 /* LaunchScreen.storyboard */,
 				7287BBB927F4AAA1005CD356 /* Info.plist */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7287BBB027F4AA9E005CD356 /* ViewController.swift in Sources */,
 				7287BBAC27F4AA9D005CD356 /* AppDelegate.swift in Sources */,
+				7287BBC027F4C28F005CD356 /* LeagueTableViewController.swift in Sources */,
+				7287BBC227F4C6DA005CD356 /* TeamTableViewController.swift in Sources */,
 				7287BBAE27F4AA9E005CD356 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
