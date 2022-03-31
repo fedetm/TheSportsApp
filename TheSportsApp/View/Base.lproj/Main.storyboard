@@ -34,7 +34,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VuK-uS-kTb" kind="show" id="Ay7-L0-dWu"/>
+                                    <segue destination="VuK-uS-kTb" kind="show" destinationCreationSelector="showTeams:sender:" id="Ay7-L0-dWu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

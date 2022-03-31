@@ -42,6 +42,15 @@ class LeagueTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBSegueAction func showTeams(_ coder: NSCoder, sender: Any?) -> TeamTableViewController? {
+        
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            return nil
+        }
+        let league = leagues[indexPath.row]
+        return TeamTableViewController(coder: coder, league: league)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
