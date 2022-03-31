@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct TeamItem {
+struct TeamItem: Codable {
     var id: Int
     var name: String
     var stadium: String
     var formedYear: Int
     var teamBadge: String
     
-//    enum CodingKeys: String, CodingKeys {
-//        case id = "idTeam"
-//        case name = "strTeam"
-//        case stadium = "strStadium"
-//        case formedYear = "intFormedYear"
-//        case teamBadge = "strTeamBadge"
-//    }
+    enum CodingKeys: String, CodingKey {
+        case id = "idTeam"
+        case name = "strTeam"
+        case stadium = "strStadium"
+        case formedYear = "intFormedYear"
+        case teamBadge = "strTeamBadge"
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TeamResponse {
+struct TeamResponse: Codable {
     let items: [TeamItem]
 }
 
