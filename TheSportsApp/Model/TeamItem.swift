@@ -8,10 +8,10 @@
 import Foundation
 
 struct TeamItem: Codable {
-    var id: Int
+    var id: String
     var name: String
     var stadium: String
-    var formedYear: Int
+    var formedYear: String
     var teamBadge: String
     
     enum CodingKeys: String, CodingKey {

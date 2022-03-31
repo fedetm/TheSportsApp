@@ -8,7 +8,7 @@
 import Foundation
 
 struct TeamResponse: Codable {
-    let items: [TeamItem]
+    let teams: [TeamItem]
 }
 
 struct LeagueResponse: Codable {

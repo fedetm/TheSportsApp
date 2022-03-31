@@ -30,10 +30,11 @@ class TeamController {
     }
     
     func fetchTeamItems(forLeague leagueName: String) async throws -> [TeamItem] {
-        let baseTeamURL = (baseURL?.appendingPathComponent("v1/json/2/search_all_leagues.php"))!
+        let baseTeamURL = (baseURL?.appendingPathComponent("v1/json/2/search_all_teams.php"))!
         var components = URLComponents(url: baseTeamURL, resolvingAgainstBaseURL: true)!
         components.queryItems = [URLQueryItem(name: "l", value: leagueName)]
         let teamURL = components.url!
+        print(teamURL)
         
         let (data, response) = try await URLSession.shared.data(from: teamURL)
         
@@ -44,6 +45,6 @@ class TeamController {
         let decoder = JSONDecoder()
         let teamResponse = try decoder.decode(TeamResponse.self, from: data)
         
-        return teamResponse.items
+        return teamResponse.teams
     }
 }
