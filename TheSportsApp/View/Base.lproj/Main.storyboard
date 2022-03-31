@@ -3,11 +3,12 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--The Sports App-->
         <scene sceneID="G6C-ZV-XCM">
             <objects>
                 <tableViewController id="UUN-80-zGn" customClass="LeagueTableViewController" customModule="TheSportsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +34,7 @@
                             <outlet property="delegate" destination="UUN-80-zGn" id="7Jl-V7-22O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5aZ-5o-KWw"/>
+                    <navigationItem key="navigationItem" title="The Sports App" id="5aZ-5o-KWw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFa-iF-EHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +56,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="QmQ-ZZ-h4S" kind="show" id="xMu-4R-iUX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,6 +71,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPQ-kP-fZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551" y="-342"/>
+        </scene>
+        <!--Team Item Detail View Controller-->
+        <scene sceneID="4Q6-47-KgW">
+            <objects>
+                <viewController id="QmQ-ZZ-h4S" customClass="TeamItemDetailViewController" customModule="TheSportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rdn-fy-Ema">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Sv3-c8-4YS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Bj-QQ-odq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLH-9O-LmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487" y="-342"/>
         </scene>
         <!--Item-->
         <scene sceneID="iSB-w3-PH4">
