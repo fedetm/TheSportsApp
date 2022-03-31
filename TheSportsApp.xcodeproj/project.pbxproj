@@ -18,6 +18,7 @@
 		7287BBCA27F52B62005CD356 /* TeamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBC927F52B62005CD356 /* TeamItem.swift */; };
 		7287BBCC27F530EF005CD356 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBCB27F530EF005CD356 /* ResponseModels.swift */; };
 		7287BBCE27F53488005CD356 /* TeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBCD27F53488005CD356 /* TeamController.swift */; };
+		7287BBD027F625D0005CD356 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287BBCF27F625D0005CD356 /* League.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7287BBC927F52B62005CD356 /* TeamItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItem.swift; sourceTree = "<group>"; };
 		7287BBCB27F530EF005CD356 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		7287BBCD27F53488005CD356 /* TeamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamController.swift; sourceTree = "<group>"; };
+		7287BBCF27F625D0005CD356 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				7287BBC927F52B62005CD356 /* TeamItem.swift */,
 				7287BBCB27F530EF005CD356 /* ResponseModels.swift */,
+				7287BBCF27F625D0005CD356 /* League.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7287BBC427F529D6005CD356 /* TeamItemDetailViewController.swift in Sources */,
+				7287BBD027F625D0005CD356 /* League.swift in Sources */,
 				7287BBAC27F4AA9D005CD356 /* AppDelegate.swift in Sources */,
 				7287BBCE27F53488005CD356 /* TeamController.swift in Sources */,
 				7287BBC027F4C28F005CD356 /* LeagueTableViewController.swift in Sources */,

@@ -15,7 +15,7 @@ class TeamController {
         case teamItemsNotFound
     }
     
-    func fetchLeagues() async throws -> [String] {
+    func fetchLeagues() async throws -> [League] {
         let leaguesURL = (baseURL?.appendingPathComponent("v1/json/2/all_leagues.php"))!
         let (data, response) = try await URLSession.shared.data(from: leaguesURL)
         

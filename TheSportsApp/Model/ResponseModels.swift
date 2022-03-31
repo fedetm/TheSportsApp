@@ -12,5 +12,5 @@ struct TeamResponse: Codable {
 }
 
 struct LeagueResponse: Codable {
-    let leagues: [String]
+    let leagues: [League]
 }
