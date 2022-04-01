@@ -10,8 +10,8 @@ import UIKit
 class TeamTableViewController: UITableViewController {
     
     let league: League
-    let teamController = TeamController()
     var teamItems = [TeamItem]()
+    var imageLoadTask: [IndexPath: Task<Void, Never>] = [:]
     
     init?(coder: NSCoder, league: League) {
         self.league = league
@@ -29,10 +29,9 @@ class TeamTableViewController: UITableViewController {
         
         Task.init {
             do {
-                let teamItems = try await teamController.fetchTeamItems(forLeague: league.name)
+                let teamItems = try await TeamController.shared.fetchTeamItems(forLeague: league.name)
                 updateUI(with: teamItems)
             } catch {
-                print(error)
                 displayError(error, title: "Failed to Fetch League Teams for \(self.league.name)")
             }
         }
@@ -57,6 +56,14 @@ class TeamTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBSegueAction func showTeamItem(_ coder: NSCoder, sender: Any?) -> TeamItemDetailViewController? {
+        
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            return nil
+        }
+        let teamItem = teamItems[indexPath.row]
+        return TeamItemDetailViewController(coder: coder, teamItem: teamItem)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,9 +90,35 @@ class TeamTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = teamItem.name
         content.secondaryText = "Stadium: \(teamItem.stadium)\nFormer Year: \(teamItem.formedYear)"
+        content.image = UIImage(systemName: "photo.on.rectangle")
         cell.contentConfiguration = content
+        Task.init {
+            if let image = try? await
+                TeamController.shared.fetchImage(from: teamItem.teamBadge) {
+                
+                if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath == indexPath {
+                    
+                    var content = cell.defaultContentConfiguration()
+                    content.text = teamItem.name
+                    content.secondaryText = "Stadium: \(teamItem.stadium)\nFormer Year: \(teamItem.formedYear)"
+                    content.image = image
+                    cell.contentConfiguration = content
+                }
+            }
+        }
     }
 
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        imageLoadTask[indexPath]?.cancel()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // Cancel image fetching tasks that are no longer needed
+        imageLoadTask.forEach { key, value in value.cancel() }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -16,7 +16,7 @@ class LeagueTableViewController: UITableViewController {
 
         Task.init {
             do {
-                let leagues = try await teamController.fetchLeagues()
+                let leagues = try await TeamController.shared.fetchLeagues()
                 updateUI(with: leagues)
             } catch {
                 displayError(error, title: "Failed to Fetch Leagues")
