@@ -35,6 +35,12 @@ class TeamItemDetailViewController: UIViewController {
         nameLabel.text = teamItem.name
         lovedLabel.text = "Loved: \(teamItem.loved ?? "Unknown")"
         descriptionLabel.text = teamItem.description
+        
+        Task.init {
+            if let image = try? await TeamController.shared.fetchImage(from: teamItem.teamBadge) {
+                imageVIew.image = image
+            }
+        }
     }
     
 

@@ -11,7 +11,7 @@ class TeamTableViewController: UITableViewController {
     
     let league: League
     var teamItems = [TeamItem]()
-    var imageLoadTask: [IndexPath: Task<Void, Never>] = [:]
+    var imageLoadTasks: [IndexPath: Task<Void, Never>] = [:]
     
     init?(coder: NSCoder, league: League) {
         self.league = league
@@ -79,7 +79,7 @@ class TeamTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamItem", for: indexPath)
 
         configure(cell, forItemAt: indexPath)
-
+        
         return cell
     }
     
@@ -92,7 +92,8 @@ class TeamTableViewController: UITableViewController {
         content.secondaryText = "Stadium: \(teamItem.stadium)\nFormer Year: \(teamItem.formedYear)"
         content.image = UIImage(systemName: "photo.on.rectangle")
         cell.contentConfiguration = content
-        Task.init {
+        
+        imageLoadTasks[indexPath] = Task.init {
             if let image = try? await
                 TeamController.shared.fetchImage(from: teamItem.teamBadge) {
                 
@@ -105,18 +106,21 @@ class TeamTableViewController: UITableViewController {
                     cell.contentConfiguration = content
                 }
             }
+            imageLoadTasks[indexPath] = nil
         }
     }
 
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        imageLoadTask[indexPath]?.cancel()
+        
+        //Cancel the image fetching task if it's no longer needed
+        imageLoadTasks[indexPath]?.cancel()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        // Cancel image fetching tasks that are no longer needed
-        imageLoadTask.forEach { key, value in value.cancel() }
+        // The view disappear before all the tasks finish loading the images
+        imageLoadTasks.forEach { key, value in value.cancel() }
     }
     
     /*
