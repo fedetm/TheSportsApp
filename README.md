@@ -33,6 +33,6 @@ into account your ability to present the information in each case.
 - Use of Git during the project (commits will be reviewed)
 - Any added value you want to add to the project
 
-To evaluate the efficiency of your application, it will be taken into account to what extent
-it manages to satisfy the aforementioned requirements, its good programming practices and
-how it improves what it has been proposed to do.
+In order to evaluate the efficiency of your application, it will be taken into account to what
+extent it manages to satisfy the mentioned requirements, its good programming practices and how 
+it improves what it has been proposed to do.
