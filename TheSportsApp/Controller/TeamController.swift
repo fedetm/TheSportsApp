@@ -20,7 +20,7 @@ class TeamController {
     }
     
     func fetchLeagues() async throws -> [League] {
-        let leaguesURL = (baseURL?.appendingPathComponent("v1/json/2/all_leagues.php"))!
+        let leaguesURL = (baseURL?.appendingPathComponent("v1/json/3/all_leagues.php"))!
         let (data, response) = try await URLSession.shared.data(from: leaguesURL)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -34,7 +34,7 @@ class TeamController {
     }
     
     func fetchTeamItems(forLeague leagueName: String) async throws -> [TeamItem] {
-        let baseTeamURL = (baseURL?.appendingPathComponent("v1/json/2/search_all_teams.php"))!
+        let baseTeamURL = (baseURL?.appendingPathComponent("v1/json/3/search_all_teams.php"))!
         var components = URLComponents(url: baseTeamURL, resolvingAgainstBaseURL: true)!
         components.queryItems = [URLQueryItem(name: "l", value: leagueName)]
         let teamURL = components.url!
